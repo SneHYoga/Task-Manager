@@ -19,4 +19,11 @@ It is Task Manager. Helps to manage the tasks.
 Remaining
 
 Pending task is to select item or data for the dependency ,tags and person (multiselect) .
-Date column
+Date column.
+
+
+To start the Project 
+1. Bsic html file.
+2. Create a folder (Name is ) css and in that folder you add the file custom.css
+3. Create a folder (Name is ) Js and int hat folder you add the file app.js
+4. Create a folder (Name is ) images and add that four images there.
