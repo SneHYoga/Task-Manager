@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>---Task Manager---</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/daterangepicker@3.1/daterangepicker.min.js"></script>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="ios-container">
+            <h4>ios api tracking</h4>
+        </div>
+        <div class="nav-container">
+            <h5 class="subTitles">Integrate</h5>
+            <h5 class="subTitles">Automate</h5>
+            <h5 class="subTitles">qqqq</h5>
+            <h5 class="subBorder">Invite/1</h5>
+            <h5 class="subTitles">qqqq</h5>
+            <h5 class="subTitles">...</h5>
+        </div>
+        <div class="main-table">
+            <h5>Main Table</h5>
+        </div>
+        <div>
+            <div class="button-container">
+                <button type="button" class="button">New Item</button>
+                <h5>Search</h5>
+                <h5>Person</h5>
+                <h5>Filter</h5>
+                <h5>Sort</h5>
+                <h5>Hide</h5>
+                <h5>Group by</h5>
+                <h5>...</h5>
+            </div>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th><input aria-label="checkbox" type="checkbox"></th>
+                        <th>Item</th>
+                        <th>Person</th>
+                        <th>Status</th>
+                        <th>Timeline</th>
+                        <th>Dependency</th>
+                        <th>Tags</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="check-cell"><input type="checkbox" placeholder=null></td>
+                        <td class="managecell"><input placeholder="Add item" type="text" class="item-input"
+                                id="newItemInput"></td>
+                        <td class="status-cell"></td>
+                        <td class="person-cell"></td>
+                        <td class="date-cell"><input placeholder=null type="date" name="daterange"
+                                value="01/01/2018 - 01/15/2018" /></td>
+                        <td class="dependency-cell"></td>
+                        <td class="tags-cell"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="popup" id="statusPopup">
+            <input type="text" class="search-input" placeholder="Search..." id="searchInput">
+            <div id="popupList"></div>
+        </div>
+
+        <div class="popup-status" id="statusPopups">
+            <button class="status-button" id="newStatus1"  style="background-color: blue;">On hold</button>
+            <button class="status-button" id="newStatus2" style="background-color: red;">Failed</button>
+            <button class="status-button" id="newStatus3" style="background-color:lightblue;">On-going</button>
+            <button class="status-button" id="newStatus4" style="background-color: goldenrod;">In Progress</button>
+            <button class="status-button" id="newStatus5" style="background-color: gray;">New Task</button>
+            <button class="status-button" id="newStatus6" style="background-color: green;">Done</button>
+            <div id="editLabelForm" style="display: none; margin-top: 10px;">
+                <input type="text" id="newLabelInput"  class="newButton" placeholder="Enter new label">
+                <input type="color" id="newColorInput" style="height: 23px;" value="#ffffff">
+                <button class="createButton" id="createNewLabel">Create</button>
+            </div>
+            <div>
+                <button class="change-button" id="editLabels" style="background-color: white; color: black;">Edit
+                    Labels</button>
+            </div>
+
+        </div>
+
+        <!-- Dependency popup -->
+        <div class="popups-container" id="dependencyPopup">
+            <input type="text" class="dependency-inpuut" id="searchInput" placeholder="Search...">
+            <ul>
+                <li class="dependency-item">Option 1</li>
+                <li class="dependency-item">Option 2</li>
+                <li class="dependency-item">Option 3</li>
+                <li class="dependency-item">Option 4</li>
+                <li class="dependency-item">Option 5</li>
+                <li class="dependency-item">Option 6</li>
+                <li class="dependency-item">Option 7</li>
+                <li class="dependency-item">Option 8</li>
+                <li class="dependency-item">Option 9</li>
+                <li class="dependency-item">Option 10</li>
+            </ul>
+            <div class="create-label-container">
+                <input type="text" id="newLabelInput" placeholder="Enter new label" style="display: none;">
+                <button class="dependency-button" id="createLabelButton">Create Label</button>
+            </div>
+        </div>
+        
+        <!-- Tag popup -->
+        <div class="popups-container" id="tagsPopup">
+            <input type="text" class="dependency-input" id="tagSearchInput" placeholder="Search...">
+            <ul>
+                <li>Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+                <li>Option 4</li>
+                <li>Option 5</li>
+                <li>Option 6</li>
+                <li>Option 7</li>
+                <li>Option 8</li>
+                <li>Option 9</li>
+                <li>Option 10</li>
+            </ul>
+            <div class="create-label-container">
+                <input type="text" class="tag-input" id="newTagInput" placeholder="Enter new tag" style="display: none;">
+                <button class="tag-button" id="createTagButton">Create Tag</button>
+            </div>
+        </div>
+
+
+        <script src="Js/app.js"></script>
+        
+        <!-- <script src="Js/dep.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/moment/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script> -->
+
+        <!-- <script>
+            $(function () {
+                $('input[name="daterange"]').daterangepicker({
+                    opens: 'left',
+                    autoUpdateInput: false, // To prevent auto-updating input
+                    locale: {
+                        cancelLabel: 'Clear', // Add cancel button to clear selection
+                        format: 'MM/DD/YYYY' // Adjust the format to match your placeholder
+                    }
+                }, function (start, end, label) {
+                    // Callback function to format the input display
+                    $('input[name="daterange"]').val(start.format('MM/DD/YYYY') + ' - ' + end.format('MM/DD/YYYY'));
+                });
+
+                // Clear input field on cancel
+                $('input[name="daterange"]').on('cancel.daterangepicker', function (ev, picker) {
+                    $(this).val('');
+                });
+            });
+        </script> -->
+</body>
+
+</html>

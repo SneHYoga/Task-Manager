@@ -1,0 +1,318 @@
+body {
+    background-color: rgb(12, 12, 68);
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+h4 {
+    font-size: 14px;
+    color: white;
+}
+.mainContainer {
+    padding: 10px;
+}
+.nav-container {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    float: right;
+} 
+.ios-container {
+    width: 70%;
+    float: left;
+}
+.subTitles {
+    color: white;
+    margin-right: 20px;
+}
+.subBorder {
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 5px;
+    border-color: white;
+    color: white;
+    margin-right: 20px
+}
+.main-table{
+    font-size: 13px;
+    color: white;
+    border-bottom: 1px solid;
+}
+.button-container {
+    display: flex;
+}
+.button-container h5 {
+    color: white;
+    font-size: 12px;
+    margin-right: 30px;
+}
+.button{
+    background-color: blue;
+    padding: 11px;
+    height: 40px;
+    margin-top: 10px;
+    color: white;
+    font-size: 12px;
+    margin-right: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.date-cell {
+    width: 20%;
+}
+.check-cell{
+    width: 3%;
+}
+.item-input{
+    margin-left: 10px;
+}
+.managecell{
+    width: 20%;
+}
+.status-cell {
+    width: 8%;
+}
+.person-cell {
+    width: 10%;
+}
+.tags-cell {
+    width: 20%;
+}
+th, td {
+    border: 1px solid #555;
+    font-size: 12px;
+    padding: 7px;
+    text-align: left;
+}
+td{
+    padding: 4px;
+}
+th {
+    background-color: #444;
+}
+input[type="date"] {
+    background-color: fff;
+    color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 15px;
+    width: 65%;
+    height:14px ;
+}
+.add-item-container {
+    margin: 20px 0;
+}
+#newItem {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#addItemButton {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Status Cell */
+
+.popup-status {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 22%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.status-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    width: 116px;
+    cursor: pointer;
+    margin: 5px;
+}
+.popup-container {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 20%;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.popup-button {
+    width: 100%;
+    padding: 8px 0;
+    margin-top: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.newButton {
+    height: 25px;
+    margin-left: 7px;
+}
+.createButton {
+    margin-right: 7px;
+    margin-top: 10px;
+    width: 35%;
+    height: 24px;
+}
+.popup-button:hover {
+    background-color: #0056b3;
+}
+.popup-button:nth-child(even) {
+    margin-left: 5px; /* Add margin to create space between buttons */
+}
+change-button {
+    width: 60%;
+    margin-left: 47px;
+    margin-top: 40px;
+}
+@media (min-width: 768px) {
+    .popup-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .popup-button {
+        width: calc(50% - 5px);
+    }
+}
+
+/* Dependency & tag cell css */
+
+.popups-container {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    color: black;
+    font-size: 12px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    width: 200px;
+}
+.popups-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.popups-container li {
+    padding: 10px;
+    cursor: pointer;
+}
+.popups-container li:hover {
+    background-color: #f0f0f0;
+}
+.dependency-cell {
+    cursor: pointer;
+    min-height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 5px; */
+    align-items: center;
+    padding: 5px;
+}
+.dependency-input {
+    margin-top: 7px;
+    margin-left: 5px;
+}
+.tag-button {
+    width: 64%;
+    margin-top: 20px;
+    margin-left: 35px;
+    height: 25px;
+    background-color: lightblue;
+}
+.tag {
+    background-color: lightblue;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    color: black;
+    margin-left: 5px;
+    gap: 5px;
+}
+.dependency-inpuut {
+    margin: 5px;
+}
+.tag .close-btn {
+    cursor: pointer;
+    font-size: 12px;
+    padding-left: 5px;
+}
+.dependency-button{
+    background-color: #8895a2;
+    width: 95%;
+    height: 30px;
+}
+
+/* Person cell */
+
+.popup {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 10px;
+    z-index: 1000;
+    width: 160px;
+}
+.popup-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color: black;
+    font-size: 13px;
+    cursor: pointer;
+}
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.table-container {
+    margin: 20px;
+}
+.status-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.status-cell {
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+}
+.search-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+
+
+
+
